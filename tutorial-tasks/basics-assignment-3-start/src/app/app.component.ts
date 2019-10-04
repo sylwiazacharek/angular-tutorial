@@ -8,10 +8,12 @@ import { Component } from '@angular/core';
 export class AppComponent {
   detailsDisplayed = false;
   clicksLog = [];
+  clicksTimestampLog = [];
 
   onDisplayDetails() {
     this.detailsDisplayed = !this.detailsDisplayed;
     this.clicksLog.push(this.clicksLog.length);
+    this.clicksTimestampLog.push(new Date());
   }
 
   getBackgroundColor(number: number) {

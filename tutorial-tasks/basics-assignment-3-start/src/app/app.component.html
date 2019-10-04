@@ -14,10 +14,11 @@
       <ng-template #noDetailsDisplayed>
         <p>Hasło = ******</p>
       </ng-template>
-      <div *ngFor="let clickLog of clicksLog"
-        [ngStyle]="{'background-color': getBackgroundColor(clickLog)}"
-        [ngClass]="{'fifth': clickLog >= 4}">
-        {{ clickLog }}
+      <div 
+        *ngFor="let clickLog of clicksLog; let i = index"
+        [ngStyle]="{'background-color': getBackgroundColor(i)}"
+        [ngClass]="{'fifth': i >= 4}">
+        {{ clicksLog[i] }} | {{ clicksTimestampLog[i] }}
       </div>
     </div>
   </div>
