@@ -1,1 +1,8 @@
 /* You can add global styles to this file, and also import other style files */
+
+.note {
+  font-size: 12px;
+  border: 1px dotted gray;
+  margin: 20px;
+  background-color: rgb(245, 245, 245);
+}
