@@ -1,1 +1,1 @@
-<p>{{ 'Server' }} with ID {{ serverId }} is {{ getServerStatus() }}, which means it's {{ serverStatus == "online" ? "up" : "down" }}!</p>
+<p [ngStyle]="{'background-color': getColor()}">{{ 'Server' }} with ID {{ serverId }} is {{ getServerStatus() }}, which means it's {{ serverStatus == "online" ? "up" : "down" }}!</p>
