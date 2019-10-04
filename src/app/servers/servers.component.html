@@ -3,6 +3,11 @@
   type="text" 
   class="form-control"
   (input)="onUpdateServerName($event)">
+<label>Server name (two-way)</label>
+<input 
+  type="text" 
+  class="form-control"
+  [(ngModel)]="serverName">
 <p>{{ serverName }}</p>
 <button 
   class="btn btn-primary" 
@@ -14,13 +19,6 @@
 <hr>
 <p>{{ allowNewServer }}</p>
 <p [innerText]="allowNewServer"></p>
-<p class="note">
-  String interpolation - print a text to a template
-  <br/>
-  Property binding - changing a value of a HTML, directive or component's property
-  <br/>
-  ! Don't mix property binding and string interpolation - a TypeScript code needs to be between the quotation marks !
-</p>
 <hr>
 <app-server></app-server>
 <app-server></app-server>
