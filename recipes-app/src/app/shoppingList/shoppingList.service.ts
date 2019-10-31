@@ -14,7 +14,24 @@ export class ShoppingListService {
   }
 
   addIngredient(ingredient: Ingredient): void {
-    this.ingredients.push(ingredient);
+    this.uniqueAddIngredient(ingredient);
     this.ingredientsChanged.emit(this.getIngredients());
+  }
+
+  addIngredients(ingredients: Ingredient[]): void {
+    for (let ingredient of ingredients) {
+      this.uniqueAddIngredient(ingredient);
+    }
+    this.ingredientsChanged.emit(this.getIngredients());
+  }
+
+  private uniqueAddIngredient(ingredient: Ingredient): void {
+    const exsistingIngredient = this.ingredients.find(x => x.name === ingredient.name);
+
+    if (exsistingIngredient) {
+      exsistingIngredient.amount += ingredient.amount;
+    } else {
+      this.ingredients.push(ingredient);
+    }
   }
 }

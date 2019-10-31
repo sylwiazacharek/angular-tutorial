@@ -1,21 +1,30 @@
 import { EventEmitter } from '@angular/core';
 import { Recipe } from './recipe.model';
+import { Ingredient } from '../shared/ingredient.model';
 
 export class RecipeService {
-  recipeSelected = new EventEmitter<Recipe>();
+  recipeSelected: EventEmitter<Recipe> = new EventEmitter<Recipe>();
 
   private recipes: Recipe[] = [
     new Recipe(
-      "A Test Recipe", 
-      "This is simply a test", 
-      "https://cdn.pixabay.com/photo/2017/07/16/10/43/recipe-2508859_960_720.jpg"),
+      'Schnitzel', 
+      'A tasty schnitzel', 
+      'https://natashaskitchen.com/wp-content/uploads/2016/02/Pork-Schnitzel-Recipe-5-500x500.jpg',
+      [
+        new Ingredient('Meat', 1),
+        new Ingredient('French Fries', 20)
+      ]),
     new Recipe(
-      "A Test Recipe 2", 
-      "This is simply a test 2", 
-      "https://cdn.pixabay.com/photo/2017/07/16/10/43/recipe-2508859_960_720.jpg")
+      'Burger', 
+      'A nbig, fat burger', 
+      'https://amp.businessinsider.com/images/5c420211b492cb5cdb1d88d4-750-501.jpg',
+      [
+        new Ingredient('Buns', 2),
+        new Ingredient('Meat', 1)
+      ])
   ];
 
-  public getRecipes() {
+  public getRecipes(): Recipe[] {
     return this.recipes.slice();
   }
 }
