@@ -1,15 +1,15 @@
 import { Component, ViewEncapsulation } from '@angular/core';
 
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css'],
-  encapsulation: ViewEncapsulation.None
+	selector: 'app-root',
+	templateUrl: './app.component.html',
+	styleUrls: ['./app.component.css'],
+	encapsulation: ViewEncapsulation.None
 })
 export class AppComponent {
-  page = 'recipes';
+	page = 'recipes';
 
-  onPageChange(page: string) {
-    this.page = page;
-  }
+	onPageChanged(page: string) {
+		this.page = page;
+	}
 }

@@ -3,22 +3,23 @@ import { Recipe } from './recipe.model';
 import { RecipeService } from './recipe.service';
 
 @Component({
-  selector: 'app-recipes',
-  templateUrl: './recipes.component.html',
-  styleUrls: ['./recipes.component.css'],
-  providers: [RecipeService]
+	selector: 'app-recipes',
+	templateUrl: './recipes.component.html',
+	styleUrls: ['./recipes.component.css'],
+	providers: [RecipeService]
 })
 export class RecipesComponent implements OnInit {
-  selectedRecipe: Recipe;
+	public selectedRecipe: Recipe;
 
-  constructor(private recipeService: RecipeService) { }
+	public constructor(
+		private _recipeService: RecipeService) { }
 
-  ngOnInit() {
-    this.recipeService.recipeSelected
-      .subscribe(
-        (recipe: Recipe) => {
-          this.selectedRecipe = recipe;
-        }
-      );
-  }
+	public ngOnInit(): void {
+		this._recipeService.recipeSelected
+			.subscribe(
+				(recipe: Recipe) => {
+					this.selectedRecipe = recipe;
+				}
+			);
+	}
 }
