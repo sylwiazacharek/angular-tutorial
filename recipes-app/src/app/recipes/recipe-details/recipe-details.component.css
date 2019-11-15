@@ -2,6 +2,6 @@
 	max-height: 350px; 
 }
 
-a {
+.dropdown-item {
 	cursor: pointer;
 }

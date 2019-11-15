@@ -8,11 +8,5 @@ import { Component, EventEmitter, Output } from '@angular/core';
 export class HeaderBarComponent {
 	public isCollapsed: boolean = true;
 
-	@Output() pageChanged = new EventEmitter<string>();
-
 	public constructor() { }
-
-	public onSelect(page: string): void {
-		this.pageChanged.emit(page);
-	}
 }

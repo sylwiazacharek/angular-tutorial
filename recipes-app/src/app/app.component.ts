@@ -6,10 +6,4 @@ import { Component, ViewEncapsulation } from '@angular/core';
 	styleUrls: ['./app.component.css'],
 	encapsulation: ViewEncapsulation.None
 })
-export class AppComponent {
-	page = 'recipes';
-
-	onPageChanged(page: string) {
-		this.page = page;
-	}
-}
+export class AppComponent { }
